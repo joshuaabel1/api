@@ -36,4 +36,4 @@ urlpatterns = [
         views.SignUpView.as_view(),
         name='create'
     ),
-]+ + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
