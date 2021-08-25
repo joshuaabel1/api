@@ -14,8 +14,8 @@ from pathlib import Path
 from pathlib import Path
 import dj_database_url 
 from decouple import config
-import django_heroku
- 
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -94,7 +94,16 @@ WSGI_APPLICATION = 'back.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'datosapi',
+        'USER': 'joshua',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 DATABASES = {
     'default': dj_database_url.config(
@@ -162,4 +171,3 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 CORS_ORIGIN_ALLOW_ALL = True # added to solve CORS
-django_heroku.settings(locals())
